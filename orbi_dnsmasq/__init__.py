@@ -1,0 +1,1 @@
+from orbi_dnsmasq.__main__ import command_line_main
