@@ -26,7 +26,7 @@ And that's the reason I created `orbi-dnsmasq`, and why you are reading this now
 - Asks for router password (note: the password is not stored in any way, you'll need to re-enter it every time).
 - Turns on telnet on the debug Orbi GUI if `-t` flag was supplied.
 - Telnet into Orbi.
-- Downloads hosts file (you can specify a custom url with the `-h` flag, or check the default one I'm using 
+- Downloads hosts file (you can specify a custom url with the `-d` flag, or check the default one I'm using 
 on [someonewhocares.org](https://someonewhocares.org/hosts/)).
 - Deletes the `no-hosts` line to active dnsmasq.
 - Reboots Orbi's dns.
