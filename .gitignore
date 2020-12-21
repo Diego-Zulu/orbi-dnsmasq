@@ -108,3 +108,7 @@ venv.bak/
 
 # macOS
 .DS_Store
+
+curls.txt
+*.bak
+tmp/*

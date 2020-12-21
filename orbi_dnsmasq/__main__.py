@@ -7,6 +7,14 @@ parser = OptionParser()
 parser.add_option(
     "-d",
     "--dns-hosts",
+    action="store_true",
+    default=False,
+    dest="download_hosts",
+    help="Download dns-hosts file"
+)
+parser.add_option(
+    "-u",
+    "--dns-url",
     action="store",
     default=DEFAULT_DNS_HOSTS_FILE,
     dest="dns_hosts_url",
@@ -21,13 +29,29 @@ parser.add_option(
     help="Toggle telnet service on the orbi debug site with selenium"
 )
 parser.add_option(
-    "-w",
-    "--webdriver",
+    "-a",
+    "--address",
+    action="store",
+    default="orbilogin.com",
+    dest="address",
+    help="IP or hostname of your router",
+    type="string"
+)
+parser.add_option(
+    "-p",
+    "--password",
     action="store",
     default=None,
-    dest="webdriver_path",
-    help="Path to the webdriver for selenium",
+    dest="password",
+    help="The password for the admin user",
     type="string"
+)
+parser.add_option(
+    "-c",
+    "--config-file",
+    action="store",
+    dest="config_file",
+    help="Path to config file to override default Orbi file"
 )
 
 
