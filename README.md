@@ -1,4 +1,7 @@
 # orbi-dnsmasq
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![PyPI version](https://badge.fury.io/py/orbi-dnsmasq.svg)](https://badge.fury.io/py/orbi-dnsmasq)
 
@@ -104,3 +107,22 @@ wouldn't have been able without it.
 - Thanks [Joel Barmettler for teaching me how to upload this to PyPi](https://medium.com/@joel.barmettler/how-to-upload-your-python-package-to-pypi-65edc5fe9c56)!
 - Thanks [PurpleBooth for the README template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)!
 
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/nferro"><img src="https://avatars1.githubusercontent.com/u/2065319?v=4" width="100px;" alt=""/><br /><sub><b>Nuno Ferro</b></sub></a><br /><a href="https://github.com/Diego-Zulu/orbi-dnsmasq/commits?author=nferro" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
