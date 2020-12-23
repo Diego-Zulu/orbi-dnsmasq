@@ -43,7 +43,7 @@ parser.add_option(
     action="store",
     default=None,
     dest="password",
-    help="The password for the admin user",
+    help="The password for the admin user (warning: insecure, watch out for your terminal's history)",
     type="string"
 )
 parser.add_option(

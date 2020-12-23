@@ -99,7 +99,7 @@ Sometimes authentication will fail and you'll see a `ts not found, retry in a mi
 
 ## Possible things to add:
 
-- ~~Read password from ENV var, don't ask it if already found.~~ You can provide the `admin` password with `-p <password>` parameter.
+- ~~Read password from ENV var, don't ask it if already found.~~ You can provide the `admin` password with `-p <password>` parameter (warning: your password may be recorded on your terminal's history, watch out for that).
 - Flag option to set username to connect with, use admin as default (is this even necessary?).
 - Create Telnet object with telnet_write methods, cleaning up the code.
 - Understand why authentication fails every now and then and fix it.

@@ -60,7 +60,6 @@ def upload_config_file(tn, file_path):
 
 def get_web_ts(host, username, password):
     r = requests.get(f'http://{host}/debug_detail.htm', auth=(username, password))
-    #print(r.text)
     results = re.search('ts="(\d+)', r.text)
     if results:
         print(f"ts={results.group(1)}")
