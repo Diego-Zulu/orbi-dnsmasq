@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "nferro",
+      "name": "Nuno Ferro",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/2065319?v=4",
+      "profile": "https://github.com/nferro",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "orbi-dnsmasq",
+  "projectOwner": "Diego-Zulu",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
