@@ -29,5 +29,5 @@ setuptools.setup(
   packages=["orbi_dnsmasq"],
   python_requires=">=2.7",
   url="https://github.com/Diego-Zulu/orbi-dnsmasq",
-  version="1.1.0",
+  version="2.0.0",
 )
