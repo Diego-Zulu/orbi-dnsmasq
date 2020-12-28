@@ -19,8 +19,7 @@ setuptools.setup(
   download_url="https://github.com/Diego-Zulu/orbi-dnsmasq/archive/v1.1.0.tar.gz",
   entry_points={"console_scripts": ["orbi-dnsmasq = orbi_dnsmasq:command_line_main"]},
   install_requires=[
-    "keyboard",
-    "selenium",
+    "requests",
   ],
   keywords=["orbi", "dnsmasq"],
   license="MIT",

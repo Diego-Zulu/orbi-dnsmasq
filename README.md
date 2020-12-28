@@ -5,7 +5,7 @@
 
 [![PyPI version](https://badge.fury.io/py/orbi-dnsmasq.svg)](https://badge.fury.io/py/orbi-dnsmasq)
 
-Python command to set a hosted hosts file as dnsmasq on your orbi router.
+Python command to update dnsmasq configuration file and / or set hosted hosts file on your Netgear Orbi router.
 
 ## Description
 
@@ -29,7 +29,8 @@ And that's the reason I created `orbi-dnsmasq`, and why you are reading this now
 - Asks for router password (note: the password is not stored in any way, you'll need to re-enter it every time).
 - Turns on telnet on the debug Orbi GUI if `-t` flag was supplied.
 - Telnet into Orbi.
-- Downloads hosts file (you can specify a custom url with the `-d` flag, or check the default one I'm using 
+- Replace `/etc/dnsmasq.conf` with a custom configuration file specified by `-c <path>`
+- Downloads hosts file if `-d` was supplied (you can specify a custom url with the `-u <url>` flag, or check the default one I'm using 
 on [someonewhocares.org](https://someonewhocares.org/hosts/)).
 - Deletes the `no-hosts` line to active dnsmasq.
 - Reboots Orbi's dns.
@@ -37,7 +38,22 @@ on [someonewhocares.org](https://someonewhocares.org/hosts/)).
 
 ## Getting Started
 
-### Prerequisites
+### Running in Docker
+
+This is the easiest way to run, all you need is Docker installed an run:
+```
+docker build -t orbi-dnsmasq . && \
+docker run -it --rm orbi-dnsmasq <parameters>
+```
+You only need the first line on the first run or if you change any Python files.
+
+If you want to upload a custom configuration file, you'll have to expose it as Docker volume, ie:
+```
+docker run -it --rm -v <full path to dnsmasq.conf>:/tmp/dnsmasq.conf orbi-dnsmasq -p $orbipw -a 192.168.21.1 -t -c /tmp/dnsmasq.conf
+```
+
+
+### Prerequisites (without Docker)
 
 First, make sure python is already installed on your system by opening the interactive environment by running on your terminal:
  
@@ -73,27 +89,24 @@ Also, **don't worry if you end up running this command twice**. I made sure it d
 
 #### Auto turn on telnet before command, and turn it off after
 
-I don't like leaving my telnet port open when I'm not using it, so I built in feature with selenium to toggle this option 
-on before running configs on the Orbi, and turning it off afterwards. If you want to use this feature, you'll first need to 
-[download one of the selenium webdrivers](https://selenium-python.readthedocs.io/installation.html#introduction).
-Any will do, just make sure you also have that browser installed on your system.
+If you don't like leaving telnet port open when not using it, you can use the `-t` parameter to automatically toggle Telnet on and off after work is done.
 
 After that, run:
 
 ```
-orbi-dnsmasq -t -w path/to/downloaded/webdriver
+orbi-dnsmasq -t
 ```
 
-You can avoid the `-w` flag if you put the downloaded webdriver in your PATH.
+## Known issues
+Sometimes authentication will fail and you'll see a `ts not found, retry in a minute or two` error. Normally retrying works.
 
 ## Possible things to add:
 
-- Read password from ENV var, don't ask it if already found.
+- ~~Read password from ENV var, don't ask it if already found.~~ You can provide the `admin` password with `-p <password>` parameter (warning: your password may be recorded on your terminal's history, watch out for that).
 - Flag option to set username to connect with, use admin as default (is this even necessary?).
 - Create Telnet object with telnet_write methods, cleaning up the code.
-- Flag option to indicate how much to wait for web elements to appear, and to indicate polling rate.
-- Use polling rate and selenium with expected condition wait.
-- Remove selenium's send keys TODO and `keyboard` dependency when [this issue is fixed](https://github.com/w3c/webdriver/issues/385).
+- Understand why authentication fails every now and then and fix it.
+- Improve `README.md`
 - Unit testing? (does it even makes sense? All telnet communications would need to be mocked)
 
 ## Acknowledgments
